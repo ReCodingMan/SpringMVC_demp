@@ -15,6 +15,14 @@
 
 <%--    <a href="hello">入门程序</a>--%>
 
-    <a href="user/testRequestMapping">RequestMapping注解</a>
+<%--    <a href="user/testRequestMapping">RequestMapping注解</a>--%>
+
+    <form action="param/saveAccount" method="post">
+        姓名：<input type="text" name="username" /><br/>
+        密码：<input type="text" name="password" /><br/>
+        金额：<input type="text" name="money" /><br/>
+        <input type="submit" value="提交" />
+    </form>
+
 </body>
 </html>

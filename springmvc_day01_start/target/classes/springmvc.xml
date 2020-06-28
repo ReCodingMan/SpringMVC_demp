@@ -12,14 +12,14 @@
        http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- 开启注解扫描 -->
-    <context:component-scan base-package="com.cc"></context:component-scan>
+    <context:component-scan base-package="com.cc"/>
 
     <!-- 视图解析器对象 -->
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/pages/"></property>
-        <property name="suffix" value=".jsp"></property>
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
 
     <!-- 开启 SpringMVC 框架注解的支持-->
-    <mvc:annotation-driven></mvc:annotation-driven>
+    <mvc:annotation-driven/>
 </beans>

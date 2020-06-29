@@ -2,8 +2,12 @@ package com.cc.controller;
 
 import com.cc.domain.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.Map;
 
@@ -12,6 +16,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/anno")
+@SessionAttributes(value = {"msg"}) //把 msg=美美 存入到 session 域当中
 public class AnnoController {
 
     /**
@@ -115,4 +120,43 @@ public class AnnoController {
 //
 //        return user;
 //    }
+
+    /**
+     * SessionAttributes 注解
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/testSessionAttributes")
+    public String testSessionAttributes(Model model) {
+        System.out.println("testSessionAttributes 执行了。。。");
+        //底层会存储到 request 域对象中
+        model.addAttribute("msg", "美美");
+        System.out.println();
+        return "success";
+    }
+
+    /**
+     * SessionAttributes 取值
+     * @param modelMap
+     * @return
+     */
+    @RequestMapping(value = "/getSessionAttributes")
+    public String getSessionAttributes(ModelMap modelMap) {
+        System.out.println("getSessionAttributes 执行了。。。");
+        String msg = (String) modelMap.get("msg");
+        System.out.println(msg);
+        return "success";
+    }
+
+    /**
+     * SessionAttributes 删除
+     * @param sessionStatus
+     * @return
+     */
+    @RequestMapping(value = "/delSessionAttributes")
+    public String delSessionAttributes(SessionStatus sessionStatus) {
+        System.out.println("delSessionAttributes 执行了。。。");
+        sessionStatus.setComplete();
+        return "success";
+    }
 }

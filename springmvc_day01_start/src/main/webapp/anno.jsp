@@ -22,5 +22,8 @@
         <input type="submit" value="提交" />
     </form>
 
+    <a href="anno/testPathVariable/10">PathVariable</a>
+
+
 </body>
 </html>

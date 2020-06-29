@@ -22,9 +22,11 @@
         <input type="submit" value="提交" />
     </form>
 
-    <a href="anno/testPathVariable/10">PathVariable</a>
+    <a href="anno/testPathVariable/10">PathVariable</a> <br />
 
-    <a href="anno/testRequestHeader">PathVariable</a>
+    <a href="anno/testRequestHeader">RequestHeader</a> <br />
+
+    <a href="anno/testCookieValue">CookieValue</a> <br />
 
 </body>
 </html>

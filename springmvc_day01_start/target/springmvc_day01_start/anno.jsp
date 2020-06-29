@@ -24,6 +24,7 @@
 
     <a href="anno/testPathVariable/10">PathVariable</a>
 
+    <a href="anno/testRequestHeader">PathVariable</a>
 
 </body>
 </html>

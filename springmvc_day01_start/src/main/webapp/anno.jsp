@@ -22,8 +22,9 @@
         <input type="submit" value="提交" />
     </form>
 
-    <a href="anno/testPathVariable/10">PathVariable</a>
+    <a href="anno/testPathVariable/10">PathVariable</a> <br />
 
+    <a href="anno/testRequestHeader">RequestHeader</a> <br />
 
 </body>
 </html>

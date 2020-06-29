@@ -1,10 +1,7 @@
 package com.cc.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 常用的注解
@@ -42,10 +39,22 @@ public class AnnoController {
      * @param id
      * @return
      */
-    @RequestMapping("/testPathVariable/{sid}")
+    @RequestMapping(value = "/testPathVariable/{sid}", method = RequestMethod.PUT)
     public String testPathVariable(@PathVariable(name = "sid") String id) {
         System.out.println("执行了。。。");
         System.out.println(id);
+        return "success";
+    }
+
+    /**
+     * RequestHeader 获取请求头信息的值
+     * @param header
+     * @return
+     */
+    @RequestMapping(value = "/testRequestHeader")
+    public String testRequestHeader(@RequestHeader(value = "Accept") String header) {
+        System.out.println("执行了。。。");
+        System.out.println(header);
         return "success";
     }
 }

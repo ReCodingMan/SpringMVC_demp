@@ -1,7 +1,11 @@
 package com.cc.controller;
 
+import com.cc.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
+import java.util.Map;
 
 /**
  * 常用的注解
@@ -69,4 +73,46 @@ public class AnnoController {
         System.out.println(cookieValue);
         return "success";
     }
+
+    /**
+     * ModelAttribute 注解
+     * @param user
+     * @return
+     */
+    @RequestMapping(value = "/testModelAttribute")
+    public String testModelAttribute(@ModelAttribute("abc") User user) {
+        System.out.println("testModelAttribute 执行了。。。");
+        System.out.println(user);
+        return "success";
+    }
+
+    /**
+     * 该方法会先执行
+     */
+    @ModelAttribute
+    public void showUser(String uname, Map<String, User> map) {
+        System.out.println("showUser 执行了。。。");
+        //通过用户名查询数据库（模拟）
+        User user = new User();
+        user.setAge(20);
+        user.setUname(uname);
+        user.setDate(new Date());
+
+        map.put("abc", user);
+    }
+
+//    /**
+//     * 该方法会先执行
+//     */
+//    @ModelAttribute
+//    public User showUser(String uname) {
+//        System.out.println("showUser 执行了。。。");
+//        //通过用户名查询数据库（模拟）
+//        User user = new User();
+//        user.setAge(20);
+//        user.setUname(uname);
+//        user.setDate(new Date());
+//
+//        return user;
+//    }
 }

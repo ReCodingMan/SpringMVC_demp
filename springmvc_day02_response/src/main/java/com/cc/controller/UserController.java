@@ -58,4 +58,19 @@ public class UserController {
         response.getWriter().println("Hello, 程成");
         return;
     }
+
+    /**
+     * 使用关键字的方式进行转发或者重定向
+     * @return
+     */
+    @RequestMapping("/testForwardOrRedirect")
+    public String testForwardOrRedirect() {
+        System.out.println("testForwardOrRedirect 执行了。。。");
+
+        //请求的转发
+        //return "forward:/WEB-INF/pages/success.jsp";
+
+        //重定向
+        return "redirect:/index.jsp";
+    }
 }

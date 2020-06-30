@@ -15,7 +15,7 @@
         //页面加载，绑定单机事件
         $(function () {
             $("#btn").click(function () {
-                alert("hello btn");
+                //alert("hello btn");
             });
         });
     </script>

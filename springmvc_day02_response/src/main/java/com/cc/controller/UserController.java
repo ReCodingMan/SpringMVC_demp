@@ -3,6 +3,7 @@ package com.cc.controller;
 import com.cc.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -101,5 +102,14 @@ public class UserController {
 
         //重定向
         return "redirect:/index.jsp";
+    }
+
+    /**
+     * ajax 测试
+     */
+    @RequestMapping("/testAjax")
+    public void testAjax(@RequestBody String body) {
+        System.out.println("testAjax 执行了。。。");
+        System.out.println(body);
     }
 }

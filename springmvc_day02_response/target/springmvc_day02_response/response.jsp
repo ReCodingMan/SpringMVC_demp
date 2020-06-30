@@ -16,6 +16,20 @@
         $(function () {
             $("#btn").click(function () {
                 //alert("hello btn");
+
+                //发送 ajax 请求
+                $.ajax({
+                    //编写json格式，设置属性和值
+                    url: "user/testAjax",
+                    contentType: "application/json;charset=UTF-8",
+                    data: '{"username":"hehe", "password":"123", "age":30}',
+                    dataType: "JSON",
+                    type: "post",
+                    success: function (data) {
+                        //data服务器端响应 json 的数据，进行解析
+
+                    }
+                });
             });
         });
     </script>

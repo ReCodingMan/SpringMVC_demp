@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletException;
@@ -108,8 +109,14 @@ public class UserController {
      * ajax 测试
      */
     @RequestMapping("/testAjax")
-    public void testAjax(@RequestBody String body) {
+    public @ResponseBody User testAjax(@RequestBody User user) {
         System.out.println("testAjax 执行了。。。");
-        System.out.println(body);
+        // 客户发送ajax请求，传的是json字符串，后端把json字符串封装到user对象中
+        System.out.println(user);
+        // 做响应，模拟查询数据库
+        user.setUsername("haha");
+        user.setAge(40);
+        //做响应
+        return user;
     }
 }

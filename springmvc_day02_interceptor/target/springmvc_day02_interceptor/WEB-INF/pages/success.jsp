@@ -12,7 +12,9 @@
 </head>
 <body>
 
-<h3>成功了</h3>
+    <h3>成功了</h3>
+
+    <% System.out.println("success.jsp 执行了..."); %>
 
 </body>
 </html>

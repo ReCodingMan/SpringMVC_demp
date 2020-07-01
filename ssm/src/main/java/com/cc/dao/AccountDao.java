@@ -3,12 +3,14 @@ package com.cc.dao;
 import com.cc.domain.Account;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * 账户dao接口
  */
+@Repository
 public interface AccountDao {
 
     /**

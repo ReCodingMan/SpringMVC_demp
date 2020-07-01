@@ -19,4 +19,23 @@
         <!-- 配置哪些注解不扫描 -->
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
+
+    <!-- Spring 整合 Mybatis 框架 -->
+    <!-- 配置连接池 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql:///ssm"/>
+        <property name="user" value="root"/>
+        <property name="password" value="123"/>
+    </bean>
+
+    <!-- 配置 SqlSessionFactory 工厂 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 配置 AccountDao 接口所在包 -->
+    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.cc.dao"/>
+    </bean>
 </beans>

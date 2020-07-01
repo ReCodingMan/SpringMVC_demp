@@ -27,6 +27,7 @@
 
     <!-- 配置拦截器 -->
     <mvc:interceptors>
+        <!-- 第一个拦截器 -->
         <mvc:interceptor>
             <!-- 要拦截的具体方法 -->
             <mvc:mapping path="/user/*"/>
@@ -34,6 +35,16 @@
 <!--            <mvc:exclude-mapping path=""/>-->
             <!-- 拦截器对象 -->
             <bean class="com.cc.interceptor.MyInterceptor1"/>
+        </mvc:interceptor>
+
+        <!-- 第二个拦截器 -->
+        <mvc:interceptor>
+            <!-- 要拦截的具体方法 -->
+            <mvc:mapping path="/user/*"/>
+            <!-- 不要拦截的具体方法 -->
+            <!--            <mvc:exclude-mapping path=""/>-->
+            <!-- 拦截器对象 -->
+            <bean class="com.cc.interceptor.MyInterceptor2"/>
         </mvc:interceptor>
     </mvc:interceptors>
     <!-- 开启 SpringMVC 框架注解的支持-->

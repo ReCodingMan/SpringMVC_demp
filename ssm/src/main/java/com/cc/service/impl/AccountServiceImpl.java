@@ -2,9 +2,11 @@ package com.cc.service.impl;
 
 import com.cc.domain.Account;
 import com.cc.service.AccountService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("AccountService")
 public class AccountServiceImpl implements AccountService {
 
     /**
